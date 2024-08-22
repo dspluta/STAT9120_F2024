@@ -8,7 +8,13 @@
 - Instructor: Dustin Pluta, PhD
 - Email: dpluta@augusta.edu
 - Office: 1011 Pavilion I
-- Office Hrs: 1200-1300 W, and by appointment
+- Office Hrs: By appointment
+
+- Recommended Texts:
+    + *Foundations of Linear and Generalized Linear Models, A. Agresti*
+    + *Applied Linear Regression, S. Weisberg*
+    + *Applied Linear Regression Models, Kutner, Nachtsheim, Neter, Wasserman*
+    + *Statistical Inference, Casella and Berger*
 
 ### Catalog Course Description
 
