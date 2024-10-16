@@ -1,0 +1,62 @@
+---
+title: "Midterm: Theory of Linear Models"
+output: html_document
+date: "Fall 2024"
+---
+
+**Due: Monday, 10/21 at 10:00am, hard-copy handed-in**
+
+Directions:
+
+- Type your solutions in RMarkdown or latex
+- Everyone must work independently: no consulting with other students, professors, or 
+posting questions online
+- You may use any textbook and your class notes for reference.
+- **No ChatGPT**
+- Along with your exam, provide a list of references that you used to complete the problems
+
+1. Consider the variance components model $Y = g + \varepsilon$, where $Y$ is an $n \times 1$ response vector, $g$ is a $n \times 1$ random effects vector with distribution $g \sim \mathcal{N}(0, \sigma^2_g K)$, where $K$ is an $n \times n$ symmetric positive definite matrix; assume $\varepsilon \sim \mathcal{N}(0, \sigma^2 I_n)$ and that $g$ and $\varepsilon$ are independent.
+
+    a. What is $\text{Var}(Y)$?
+    b. Compute the maximum likelihood estimate for $\sigma^2_g$.
+    c. Suppose $X$ is an $n \times p$ matrix of covariates such that $K = XX^T$.  Provide 
+    an interpretation of the elements of $K$ with respect to the covariates measured in $X$.
+    d. Provide an interpretation of the quantity $\frac{\sigma^2_g}{\sigma^2_g + \sigma^2_{\varepsilon}}$.
+    e. Compute the score test statistic for hypothesis $H_0: \sigma^2_g = 0$.
+    f. Consider now the model $Y = X\beta + \eta$, $\eta \sim \mathcal{N}(0, \sigma^2I_n)$.  Compute the score test statistic for $H_0: \beta = 0$.
+    g. Are the two score test null hypotheses always equivalent? Why or why not?
+    h. Assuming the null hypotheses are equivalent, identify a situation for which the two 
+    tests will have different power.
+
+2. A random variable $X = \sum_{i = 1}^k Z_i^2$, for $Z_i$ independent standard normal random variables, follows a *Chi-Squared* distribution with $k$ degrees of freedom.  Show that $Y^T \Sigma^{-1} Y \sim \chi_k^2$ for $Y \sim \mathcal{N}(0, \Sigma)$.  Show your work and carefully explain your reasoning for full credit.
+
+3. Let $P_X$ and $P_W$ be the projection matrices corresponding respectively to the column spaces of matrices $X$ and $W$, respectively. Assume $X$ is $n \times r$ with $\text{rank}(X) = r$, and $W$ is $n \times q$ with $\text{rank}(W) = q$.  Under what conditions will the projections commute? I.e., when is $P_X P_W = P_W P_X$ true?
+
+4. Consider the regression model $Y = X\beta + \varepsilon$ with $\varepsilon \sim \mathcal{N}(0, \Sigma)$, where 
+$\Sigma$ is a positive definite covariance matrix that is otherwise unspecified.
+  
+    a. Verify that the generalized least squares estimator $\hat\beta_G = (X^T\Sigma^{-1}X)^{-1}X^T\Sigma^{-1/2}Y$ is unbiased.
+    b. Compute the variance of $\hat \beta_G$.
+    c. In this setting, calculate the bias of the usual OLS estimator $\hat\beta = (X^TX)^{-1}X^TY$.
+    d. Compute the variance of $\hat\beta$.
+    e. What is the statistical advantage of using $\hat\beta_G$ instead of $\hat\beta$ when we know that $\Sigma \neq \sigma^2I_n$?  Explain your answer in rigorous statistical terms referring to concepts such as power, variance, mean squared error, bias, etc.
+
+5. Consider the regression model $Y = X\beta + \varepsilon$, with $\mathbb{E}[\varepsilon] = 0$.  Assume $X$ is full column rank so that $\hat Y = X(X^TX){-1}X^TY$.
+
+    a. Show that $\text{Cov}(\hat Y, (Y - \hat Y)) = 0$. 
+    b. Show that if $\varepsilon \sim \mathcal{N}(0, \sigma^2 I_n)$, then $\hat Y$ and $Y - \hat Y$ are independent.
+    c. Prove or Disprove: if $\varepsilon \sim \mathcal{N}(0, \Sigma)$, then $\hat Y$ and $Y - \hat Y$ are independent.
+
+6. Let $Y_i = \beta \cdot i + \varepsilon_i$, $i = 1, \dots, n$, $\mathbb{E}\varepsilon_i = 0$, 
+$\text{Var}(\varepsilon_i) = i^2\sigma^2$.
+
+    a. Compute the usual Least Squares Estimate for $\beta$.
+    b. Compute the best linear unbiased estimator for $\beta$.
+    c. What is the difference in variance for the estimators from parts (a) and (b)?
+
+7. Consider the model $Y_{ij} = \alpha_i + \beta_j + \varepsilon_{ij}$, where $i = 1, \dots, a; j = 1, \dots, b$, and $\varepsilon_{ij} \overset{iid}\sim (0, \sigma^2)$.
+
+    a. Clearly describe the structure of the design matrix for this model.  That is, 
+    we wish to write the model in matrix form as $Y = X\gamma + \varepsilon$ for some matrix $X$.
+    b. Recall that a function $\sum c_i\alpha_i + \sum d_j\beta_j$ is estimable iff the 
+    linear contrast vector $u^T = (c_1, \dots, c_a, d_1, \dots, d_b)$ is in $\mathcal{C}(X^T)$.  Identify a condition of $c_1, \dots, c_a, d_1, \dots, d_b$ that is necessary and sufficient for the estimability of $u^T\gamma$.
